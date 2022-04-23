@@ -1,0 +1,22 @@
+<h1> Showing all thoughts... </h1>
+
+<table> 
+	<head>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Actions</th>
+			<th>Likes</th>
+		</tr>
+	</thead>
+	
+	<tbody> <!-- This is where we put embedded ruby  -->
+		<% @thoughts.each do |thought| %>
+			<tr>
+				<td><%= thought.title %></td>
+				<td><%= thought.description %></td>
+				<td>placeholder</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
