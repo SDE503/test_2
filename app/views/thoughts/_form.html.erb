@@ -1,0 +1,26 @@
+<% if @thought.errors.any? %>
+	<h2>The following errors prevented the thought from being saved</h2>
+	<ul>
+		<% @thought.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>	
+<% end %>	
+
+<%= form_with(model: @thought, local: true) do |f| %> <!-- This ensures that the form is populated when the dit page is loaded -->
+
+	<p>
+		<%= f.label :title %><br/>
+		<%= f.text_field :title %>
+	</p>
+	
+	<p>
+		<%= f.label :description %><br/>
+		<%= f.text_area :description %>
+	</p>
+	
+	<p>
+		<%= f.submit %>  
+	</p>
+
+<% end %>	

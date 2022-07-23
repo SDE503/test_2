@@ -2,3 +2,7 @@
 
 <p><strong>Title: </strong><%= @thought.title %></p>
 <p><strong>Description: </strong><%= @thought.description %></p>
+
+<%= link_to 'Edit', edit_thought_path(@thought) %> |
+<%= link_to 'Delete', thought_path(@thought), method: :delete, data: {confirm: "Are you sure you want to delete?"} %> |
+<%= link_to 'Return to thoughts listings', thoughts_path %>
