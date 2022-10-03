@@ -19,6 +19,7 @@ class ThoughtsController < ApplicationController
 	
 	def create
 		@thought = Thought.new(thought_params)
+		@thought.user = User.first
 		if @thought.save
 			flash[:notice] = 'Thought was created successfully!'
 			redirect_to @thought
@@ -28,7 +29,7 @@ class ThoughtsController < ApplicationController
 	end
 	
 	def update
-		if @thought.update(thought_params)
+		if @thought.update(thought_params    )
 			flash[:notice] = "Thought was succesfully updated."
 			redirect_to @thought
 		else
